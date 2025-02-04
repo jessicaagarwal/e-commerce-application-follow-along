@@ -23,6 +23,7 @@ React Frontend Setup: Initialized a React app to manage the UI, allowing the e-c
 Node.js Backend Setup: Configured a basic Node.js server to lay the foundation for upcoming API integrations and user authentication.
 Tailwind CSS Configuration: Integrated Tailwind CSS for utility-first, responsive styling to enhance UI development speed.
 Login Page Development: Designed and built a functional Login Page with form validation and styling using Tailwind.
+
 Milestone 3:
 
 In this milestone, we focused on building the foundation for the backend of our e-commerce application. The key objectives were to set up a server, connect it to a database, and establish a solid folder structure to keep our code organized.
@@ -66,3 +67,34 @@ Server Setup: We initialized a Node.js server using the Express framework. The s
 Database Connection: We integrated MongoDB into the project to store and manage data. The server is now connected to MongoDB, enabling efficient data storage and retrieval.
 
 Error Handling: Basic error-handling mechanisms were added to ensure that the server can respond with clear error messages for better debugging and user feedback.
+
+Milestone 7: Login Endpoint 📝
+
+Create a login endpoint to authenticate users. Users provide their email/username and password. The backend compares the entered password (hashed with bcrypt) to the stored password. If valid, a JWT token is generated and returned for subsequent requests.
+
+Dependencies: bcryptjs, jsonwebtoken.
+
+Test via POST /api/auth/login with email and password in the request body.
+
+Response: Success with a token, or error for invalid credentials.
+
+Milestone 8: Product Card Component 🌟
+
+In this milestone, we focus on creating a reusable product card component for your e-commerce app. The goal is to showcase product details (e.g., name, image, price) in a visually appealing way, making it easy for users to browse products.
+
+Steps Completed:
+1. Card Component: Designed a reusable card that accepts product details as props.
+2. Homepage Layout: Implemented a grid/flexbox layout to display multiple cards neatly.
+3. Dynamic Rendering: Used array mapping to dynamically render cards for each product
+
+Milestone 9: Product Input Form 🌟
+
+In this milestone, we focused on creating a frontend form for adding products to your e-commerce app. This form allows users to input detailed information about products, including multiple images, which will eventually be saved to a database and displayed on the product homepage.
+
+Steps Completed:
+
+Product Form: Built a form to input details like product name, description, price, category, and quantity.
+
+Multiple Image Input: Added functionality for users to upload multiple images for each product.
+
+Dynamic Data: Set up the form to eventually save the product data and display it dynamically on the product homepage.
