@@ -92,9 +92,14 @@ Milestone 9: Product Input Form 🌟
 In this milestone, we focused on creating a frontend form for adding products to your e-commerce app. This form allows users to input detailed information about products, including multiple images, which will eventually be saved to a database and displayed on the product homepage.
 
 Steps Completed:
+1. Product Form: Built a form to input details like product name, description, price, category, and quantity.
+2. Multiple Image Input: Added functionality for users to upload multiple images for each product.
+3. Dynamic Data: Set up the form to eventually save the product data and display it dynamically on the product homepage.
 
-Product Form: Built a form to input details like product name, description, price, category, and quantity.
+Milestone 10: Product Schema & Endpoint Creation
 
-Multiple Image Input: Added functionality for users to upload multiple images for each product.
+In this milestone, I created a Mongoose schema to define the structure for storing product data in MongoDB. The schema includes fields like name, description, price, and image URL, with proper validation to ensure data integrity (e.g., required fields, correct data types).
 
-Dynamic Data: Set up the form to eventually save the product data and display it dynamically on the product homepage.
+I also built a POST endpoint that receives product details, validates the input data, and stores it in the database. This ensures that only valid product information is saved, maintaining a clean and reliable database.
+
+Additionally, I explored optional features like creating admin roles for restricted access to product uploads. This milestone strengthens the backend process of handling product data, making it ready for display on the frontend in future milestones.
