@@ -54,7 +54,7 @@ const CreateProduct = () => {
 
     try {
         const response = await axios.post(
-        "http://localhost:7000/api/v2/product/create-product",
+        "http://localhost:3000/api/v2/product/create-product",
         formData,
          {
              headers: {
