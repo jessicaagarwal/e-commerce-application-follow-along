@@ -12,6 +12,7 @@ function App(){
         <Route path="/Signup" element={<SignupPage/>}/>
         <Route path="/Home" element={<Home/>}/>
         <Route path='/create-product' element={<CreateProduct />} />
+        <Route path="/create-product/:id" element={<CreateProduct />} />
         <Route path="/my-products" element={<MyProducts/>}/>
       </Routes>
     </BrowserRouter>
