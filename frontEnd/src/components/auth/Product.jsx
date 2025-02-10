@@ -19,18 +19,19 @@ function Product({ _id, name, images, description, price }) {
         navigate(`/create-product/${_id}`);
     };
 
-    const handleDelete = async() => {
-        try{
+    const handleDelete = async () => {
+        try {
             const response = await axios.delete(
                 `http://localhost:3000/api/v2/product/delete-product/${_id}`
             );
             if (response.status === 200) {
-                alert ("Product deleted successfully!");
-                window.location.reload;
+                alert("Product deleted successfully!");
+                // Reload the page or fetch products again
+                window.location.reload();
             }
-        } catch(err){
-            console.error("Error deleting product:",err);
-            alert ("Failed to delete product.");
+        } catch (err) {
+            console.error("Error deleting product:", err);
+            alert("Failed to delete product.");
         }
     };
     

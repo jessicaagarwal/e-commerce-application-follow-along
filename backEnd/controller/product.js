@@ -5,7 +5,6 @@ const User = require("../model/user");
 const router = express.Router();
 const { pupload } = require("../multer");
 const path = require('path');
-const { error } = require("console");
 
 const validateProductData = (data) => {
   const errors = [];
@@ -172,18 +171,19 @@ router.put('/update-product/:id', pupload.array('images', 10), async (req, res) 
       res.status(500).json({ error: 'Server error. Could not update product.' });
   }
 });
-router.delete('/delete-product/:id', async(req,res) => {
-  const {id} = req.params;
-  try{
-    const existingProduct = await Product.findById(id);
-    if (!existingProduct){
-      return res.status(404).json({error:'Product not found.'});
-    }
-    await existingProduct.deleteOne();
-    res.status(200).json({message:'Product deleted successfully'});
-  } catch(err){
-    console.error('Server error:',err);
-    res.status(500).json({error: 'Server error. Could not delete product.'});
+
+router.delete('/delete-product/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+      const existingProduct = await Product.findById(id);
+      if (!existingProduct) {
+          return res.status(404).json({ error: 'Product not found.' });
+      }
+      await existingProduct.deleteOne();
+      res.status(200).json({ message: '✅ Product deleted successfully' });
+  } catch (err) {
+      console.error('Server error:', err);
+      res.status(500).json({ error: 'Server error. Could not delete product.' });
   }
 });
 
