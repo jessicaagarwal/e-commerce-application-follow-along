@@ -120,9 +120,42 @@ Milestone 14 - Delete the product
 
 This e-commerce application is built with Node.js, Express, MongoDB, and React, providing full-stack functionality for product management. It includes RESTful APIs for adding, updating, and deleting products. The /delete-product/:id endpoint allows secure product removal. Error handling ensures reliability. Ideal for scalable and dynamic online stores.
 
-Milestone 15
-In this milestone, we created a navigation bar on the homepage where we can see "My Products," "Add Product," and "Cart."
+Milestone 15 - Added Nav bar
+Added the nav component to all the pages and make the navigations to all this pages smooth and easy.
+
+Nav component with links to all pages:-
+
+1.Home
+
+2.My-products
+
+3.Add product
+
+4.cart
 
 Milestone 16
 In this milestone, we updated our product detail file so that we can access more information about our product.
+
+Milestone 17: Cart Functionality
+Overview:-
+
+This milestone involves adding a cart feature to the user schema and implementing an endpoint to store product details in the cart.
+
+Changes Made:
+
+Cart Schema:
+
+Added a Cart schema to store products associated with the user.
+Each product contains a productId (referencing the Product model) and quantity.
+Endpoint for Adding Products to Cart:
+
+Created a POST endpoint /api/cart/add to receive product details (e.g., product ID and quantity).
+The product details are stored in the cart associated with the user in the database.
+Milestone 18: Cart Functionality Update
+Overview:-
+
+In this milestone, we have added two key backend endpoints to handle cart functionalities:
+
+1. Adding products to the cart via a POST request.
+2. Fetching all products inside a user's cart using their email.
 
