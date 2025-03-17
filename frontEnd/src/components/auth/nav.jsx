@@ -197,6 +197,7 @@ const NavBar = () => {
                                             ? "text-white font-semibold px-3 py-2 rounded-md text-md text-base transition-colors duration-200"
                                             : "text-gray-200 hover:text-white px-3 py-2 rounded-md text-md text-base transition-colors duration-200"
                                     }
+                                    onClick={() => setIsOpen(false)}
                                 >
                                     Profile
                                 </NavLink>
