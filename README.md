@@ -206,3 +206,21 @@ Welcome to Milestone 24! In this milestone, we focused on creating the "Order Co
 Welcome to Milestone 25! 
 
 In this milestone, we focus on creating a backend endpoint to place an order. This involves setting up an API endpoint that will allow users to place orders by providing product, user, and address details.
+
+# Milestone 26: Get User Orders Endpoint
+
+Welcome to Milestone 26! 
+
+In this milestone, we focus on creating a backend endpoint to retrieve all orders placed by a user. This involves setting up an API endpoint that allows users to fetch all their previous orders based on their email.
+
+# Milestone 27: My Orders Page
+
+Welcome to Milestone 27! 
+
+In this milestone, we focused on creating the frontend page that displays all user orders.
+
+# Milestone 28: Cancel Order Feature
+
+Welcome to Milestone 28!
+
+ In this milestone, we focused on adding a cancel order feature to the `my-orders` page and creating a backend endpoint for handling order cancellations.
