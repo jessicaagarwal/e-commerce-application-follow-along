@@ -255,3 +255,11 @@ In this milestone, I implemented Redux for global state management. I set up a R
 ✅ Dispatch & Select – Used useDispatch and useSelector for state manipulation.
 
 This implementation improves state consistency and makes data flow more manageable across components.
+
+
+# Milestone 33📝
+
+Downloaded jsonwebtoken package using NPM
+Used sign method to create an JWT token with mail and ID
+Gave maxAge to set expire time
+Added the cookie inside the response that helps you to store the cookie inside browser.
