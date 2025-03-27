@@ -241,3 +241,17 @@ Set up logic so that PayPal buttons only appear when the Online Payment option i
 
 Implemented online payment using PayPal API using the client key you created earlier.
 Downloaded NPM package called react-paypal-js that will provide an component called PayPalScriptProvider which will display online payment methods like credit or debit card etc..,
+
+
+# Milestone 31: Redux for Global State Management
+In this milestone, I implemented Redux for global state management. I set up a Redux store to manage application-wide states efficiently.
+
+✅ Store Setup – Configured Redux store using @reduxjs/toolkit.
+
+✅ Slices & Reducers – Created slices to manage state updates.
+
+✅ Provider Integration – Wrapped the app with Provider to enable global access.
+
+✅ Dispatch & Select – Used useDispatch and useSelector for state manipulation.
+
+This implementation improves state consistency and makes data flow more manageable across components.

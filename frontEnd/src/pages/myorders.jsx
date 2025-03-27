@@ -1,49 +1,52 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import NavBar from '../components/auth/nav';
+import { useState, useEffect } from 'react';
+ import axios from 'axios';
+ import NavBar from '../components/auth/nav';
+ import { useSelector } from 'react-redux'; // Import useSelector from react-redux
  
-const MyOrdersPage = () => {
-    const [orders, setOrders] = useState([]);
-    const defaultEmail = 'valid@example.com';
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
+ const MyOrdersPage = () => {
+     const [orders, setOrders] = useState([]);
+     const [loading, setLoading] = useState(false);
+     const [error, setError] = useState('');
+     // Retrieve email from Redux state
+     const email = useSelector((state) => state.user.email);
 
-    const fetchOrders = async () => {
-        try {
-            setLoading(true);
-            setError('');
-            const response = await axios.get('http://localhost:3000/api/v2/orders/myorders', {
-                params: { email: defaultEmail },
-            });
-            setOrders(response.data.orders);
-        } catch (err) {
-            setError(err.response?.data?.message || 'Error fetching orders');
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    // Cancel order handler
-    const cancelOrder = async (orderId) => {
-        console.log("aa")
-        try {
-            const response = await axios.patch(`http://localhost:3000/api/v2/orders/cancel-order/${orderId}`);
-            // Update the order in local state: either remove or update its status.
-            setOrders((prevOrders) =>
-                prevOrders.map((order) =>
-                    order._id === orderId ? { ...order, status: response.data.order.status } : order
-                )
-            );
-            fetchOrders();
-        } catch (err) {
-            console.error(err);
-            alert(err.response?.data?.message || 'Error cancelling order');
-        }
-    };
+     const fetchOrders = async () => {
+        if (!email) return; // Only fetch if email is available
+         try {
+             setLoading(true);
+             setError('');
+             const response = await axios.get('http://localhost:3000/api/v2/orders/myorders', {
+                 params: { email: email },
+             });
+             setOrders(response.data.orders);
+         } catch (err) {
+             setError(err.response?.data?.message || 'Error fetching orders');
+         } finally {
+             setLoading(false);
+         }
+     };
+ 
+     // Cancel order handler
+     const cancelOrder = async (orderId) => {
+         console.log("aa")
+         try {
+             const response = await axios.patch(`http://localhost:3000/api/v2/orders/cancel-order/${orderId}`);
+             // Update the order in local state: either remove or update its status.
+             setOrders((prevOrders) =>
+                 prevOrders.map((order) =>
+                     order._id === orderId ? { ...order, status: response.data.order.status } : order
+                 )
+             );
+             fetchOrders();
+         } catch (err) {
+             console.error(err);
+             alert(err.response?.data?.message || 'Error cancelling order');
+         }
+     };
      
-    useEffect(() => {
-        fetchOrders();
-    }, []);
+     useEffect(() => {
+         fetchOrders();
+     }, [email]);
  
      return (
          <>
