@@ -256,6 +256,10 @@ In this milestone, I implemented Redux for global state management. I set up a R
 
 This implementation improves state consistency and makes data flow more manageable across components.
 
+# Milestone 32📝
+
+In Login page we used Dispatch method to store the mail inside global state
+In all the remaining pages acc the mail were stored in global state using useSelector
 
 # Milestone 33📝
 
