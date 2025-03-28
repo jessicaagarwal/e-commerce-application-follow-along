@@ -14,7 +14,7 @@ const jwt = require('jsonwebtoken');
      let decodedData;
      try {
          // Verify token using your JWT secret
-         decodedData = jwt.verify(token, "randomtoken1234567890");
+         decodedData = jwt.decode(token, "randomtoken1234567890");
          console.log("Decoded data:", decodedData);
      } catch (err) {
          // If this block executes, jwt.verify() threw an error
