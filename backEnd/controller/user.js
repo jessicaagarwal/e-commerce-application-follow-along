@@ -47,7 +47,6 @@ router.post(
           url: fileUrl,
         },
       });
-  
       res.status(201).json({ success: true, user});
     })
   );
@@ -63,6 +62,8 @@ router.post(
         return next(new ErrorHandler("Invalid Email or Password", 401));
     }
     const isPasswordMatched = await bcrypt.compare(password, user.password);
+    console.log(password);
+    console.log(user.password);
     console.log(isPasswordMatched)
     if (!isPasswordMatched) {
         return next(new ErrorHandler("Invalid Email or Password", 401));
